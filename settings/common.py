@@ -123,7 +123,6 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(PROJECT_PATH, "django_yaba/media"),
     os.path.join(PROJECT_PATH, "mhf/static"),
 )
 
@@ -177,7 +176,6 @@ INSTALLED_APPS = (
     'mhf',
     'tagging',
     'disqus',
-    'django_yaba',
     'south',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
