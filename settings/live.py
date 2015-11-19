@@ -3,7 +3,10 @@ from settings.common import *
 DEBUG=True
 
 DATABASES = {
-    'default': SECRETS_DICT['DATABASES']['LIVE']
+  'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
+    }
 }
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()

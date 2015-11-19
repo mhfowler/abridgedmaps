@@ -3,7 +3,7 @@ body {
 }
 
 .simple-text {
-     font-family: 'Menlo', serif;
+    font-family: 'Menlo', serif;
     padding-left: 40px;
     padding-top: 20px;
     width: 80%;
@@ -217,9 +217,10 @@ h3 {
 
     }
 
-    #pac-input {
+    input#pac-input {
         width: 240px;
         border: 1px solid gray;
+        margin-left:20px;
     }
 
     .maps-wrapper {
@@ -234,7 +235,7 @@ h3 {
     }
 
     h1.place_str {
-         width: 100%;
+        width: 100%;
         margin: auto;
         top: 25%;
     }
@@ -278,3 +279,13 @@ h3 {
     z-index:8;
 }
 
+
+#pac-input {
+    width: 300px;
+    border: 1px solid gray;
+    padding-left: 10px;
+    margin-left: 8px;
+    top: 2px;
+    font-size:14px;
+    font-family:'Menlo',serif;
+}
