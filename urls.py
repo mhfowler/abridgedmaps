@@ -16,77 +16,16 @@ from django.http import HttpResponse
 #
 # patterns for mhfowler
 urlpatterns = patterns('',
-                       # (r'^$', viewWrapper(monkeyLoader)),
-                       (r'^______/$', viewWrapper(theHome)),
-                       (r'^~/$', viewWrapper(monkeySkull)),
-                       (r'^brocascoconut/$', viewWrapper(brocasCoconut)),
-                       (r'^LOADING/(?P<page>\w+)/$', viewWrapper(loadingCrazy)),
-
-                       # posts
-                       (r'^submit_email/$', viewWrapper(submitEmail)),
-
-                       # capitalist products
-                       (r'^the_capitalist_tshirt/$', viewWrapper(capitalistTees)),
-                       (r'^the_capitalist_print/$', viewWrapper(capitalistTees)),
-                       (r'^the_capitalist_booty/$', viewWrapper(capitalistTees)),
-
-                       # other pages
-                       (r'^gmaps/$', viewWrapper(abridged_space)),
+                       (r'^/$', viewWrapper(abridged_space)),
                        (r'^gmaps/take_me_anywhere/$', viewWrapper(abridged_space_take_me_anywhere)),
                        (r'^gmaps2/$', viewWrapper(abridged_space2)),
-                       (r'^gmaps/(?P<coordinates>.*)/$', viewWrapper(abridged_space)),
-                       (r'^writing/$', viewWrapper(writing)),
-                       (r'^art/$', viewWrapper(art)),
-                        (r'^vr/$', viewWrapper(vr_landing)),
-                       (r'^projects/$', viewWrapper(projects)),
-                       (r'^store/$', viewWrapper(store)),
-                       (r'^contact/$', viewWrapper(contact)),
-                       (r'^about_brocas/$', viewWrapper(about)),
-                       (r'^buyShirt/$', viewWrapper(buyShirt)),
-
-                       # actions
-                       (r'^trashbot/$', viewWrapper(trashBot)),
-                       (r'^check_for_dms/$', viewWrapper(check_for_dms_endpoint)),
-
-                       # truespeak
-                       (r'^truespeak/$', viewWrapper(truespeak)),
-                       (r'^truespeak/(?P<name>\w+)/(?P<appendage>\d+)/$', viewWrapper(truespeakPublicDetail)),
-                       (r'^secretlink/(?P<name>\S+)/(?P<appendage>\d+)/$', viewWrapper(truespeakSecretLink)),
-                       (r'^publish_texts/$', viewWrapper(publishTexts)),
-
-
+                       (r'^/(?P<coordinates>.*)/$', viewWrapper(abridged_space)),
                        )
 
-# patterns for blog
-urlpatterns += patterns('',
-                        (r'^home/$', viewWrapper(home)),
-                        (r'^machine_learning/$', viewWrapper(machine_learning)),
-                        (r'^twitter_visualization/$', viewWrapper(twitter_visualization)),
-                        (r'^map_reduce/$', viewWrapper(map_reduce)),
-                        )
-
-# patterns for django_yaba
-urlpatterns += patterns('',
-                        url(r'^nocss/', include('django_yaba.urls')),
-                        )
-
-
-# patterns for admin
-from django.contrib import admin
-
-admin.autodiscover()
-
-urlpatterns += patterns('',
-                        (r'^admin/', include(admin.site.urls)),
-                        )
-
-urlpatterns += patterns('', (r'^robots.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /", mimetype="text/plain")) )
-
-#
 # # # redirect everything else
 urlpatterns += patterns('',
-                        (r'^/$',  redirect, {'page':"/~/"}),
-                        (r'^$',  redirect, {'page':"/~/"}),
+                        (r'^/$',  redirect, {'page':"/"}),
+                        (r'^$',  redirect, {'page':"/"}),
                         # (r'.*$',  redirect, {'page':"/home/"}),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
