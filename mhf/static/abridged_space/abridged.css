@@ -220,7 +220,7 @@ h3 {
     input#pac-input {
         width: 240px;
         border: 1px solid gray;
-        margin-left:20px;
+        margin-left:15px;
     }
 
     .maps-wrapper {
