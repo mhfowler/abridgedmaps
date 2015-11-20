@@ -7,3 +7,7 @@ mailgun.secret
 *.psd
 bin/latest_mention.txt
 bots/latest_mention.txt
+bots/crop_sof.png
+bots/ghostdriver.log
+bots/sof.png
+bots/thumbnail_sof.png

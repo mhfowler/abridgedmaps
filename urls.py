@@ -9,7 +9,7 @@ urlpatterns = patterns('',
                        (r'^$', abridged_space),
                        (r'^gmaps/take_me_anywhere/$', abridged_space_take_me_anywhere),
                        (r'^gmaps2/$', abridged_space2),
-                       (r'^/(?P<coordinates>.*)/$', abridged_space),
+                       (r'^(?P<coordinates>.*)/$', abridged_space),
                        )
 
 urlpatterns += patterns('',
